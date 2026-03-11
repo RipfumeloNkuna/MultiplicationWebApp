@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <servlet>
+        <servlet-name>nameServlet</servlet-name>
+        <servlet-class>za.ac.tut.Servlet.nameServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>questionsSevlet</servlet-name>
+        <servlet-class>za.ac.tut.Servlet.questionsSevlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>answerServlet</servlet-name>
+        <servlet-class>za.ac.tut.Servlet.answerServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>endSession</servlet-name>
+        <servlet-class>za.ac.tut.Servlet.endSession</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>summaryServlet</servlet-name>
+        <servlet-class>za.ac.tut.Servlet.summaryServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>nameServlet</servlet-name>
+        <url-pattern>/nameServlet.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>questionsSevlet</servlet-name>
+        <url-pattern>/questionsSevlet.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>answerServlet</servlet-name>
+        <url-pattern>/answerServlet.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>endSession</servlet-name>
+        <url-pattern>/endSession.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>summaryServlet</servlet-name>
+        <url-pattern>/summaryServlet.do</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+    <context-param>
+        <param-name>Computer</param-name>
+        <param-value>Siri</param-value>
+    </context-param>
+    
+    <error-page>
+        <exception-type>java.lang.NumberFormatException</exception-type>
+        <location>/NumberFormat.jsp</location>
+    </error-page>
+    
+    <error-page>
+        <exception-type>za.ac.tut.exception.NumberRangeException</exception-type>
+        <location>/NumberRange.jsp</location>
+    </error-page>
+</web-app>

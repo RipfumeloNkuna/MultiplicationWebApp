@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <servlet>
+        <servlet-name>nameServlet</servlet-name>
+        <servlet-class>nameServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>GameServlet</servlet-name>
+        <servlet-class>SERVLET.GameServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>EndSession</servlet-name>
+        <servlet-class>SERVLET.EndSession</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>nameServlet</servlet-name>
+        <url-pattern>/nameServlet.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>GameServlet</servlet-name>
+        <url-pattern>/GameServlet.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EndSession</servlet-name>
+        <url-pattern>/EndSession.do</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+    <context-param>
+        <param-name>Computer</param-name>
+        <param-value>Siri</param-value>
+    </context-param>
+    
+    <error-page>
+        <error-code>404</error-code>
+        <location>/FileNotFound.jsp</location>
+    </error-page>
+    
+    <error-page>
+        <exception-type>java.lang.NumberFormatException</exception-type>
+        <location>/NumberFormatException.jsp</location>
+    </error-page>
+    
+    <error-page>
+        <exception-type>exception.NumberRangeException</exception-type>
+        <location>/NumberRangeException.jsp</location>
+    </error-page>
+</web-app>
